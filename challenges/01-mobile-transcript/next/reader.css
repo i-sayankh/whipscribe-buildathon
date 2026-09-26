@@ -206,3 +206,4 @@ a.icon-btn { color: var(--ink); }
 html { scroll-padding-top: calc(var(--tabs) + 8px); scroll-padding-bottom: calc(var(--dock) + 16px); }
 button, a, summary, .s { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
 .sheet, .sheet-body { overscroll-behavior: contain; }
+.skip:focus { position: fixed; left: 8px; top: 8px; z-index: 40; width: auto; height: auto; clip: auto; padding: 10px 14px; border-radius: 10px; background: var(--ink-strong); color: var(--white); }
