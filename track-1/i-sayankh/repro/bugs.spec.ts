@@ -114,6 +114,19 @@ test.describe('signed in', () => {
       expect(rowBottom).toBeLessThanOrEqual(tabsTop);
     });
 
+    test('top-up modal: nothing spills out of the dialog (account with 0 credits) @390', async ({ page }) => {
+      signedIn();
+      await startUpload(page);
+      const outside = await page.evaluate(() => {
+        const d = document.querySelector('.whip-topup-dialog')!.getBoundingClientRect();
+        return [...document.querySelectorAll('.whip-topup-dialog *')].filter((e) => {
+          const r = e.getBoundingClientRect();
+          return r.width > 0 && (r.left < d.left - 1 || r.right > d.right + 1);
+        }).length;
+      });
+      expect(outside).toBe(0);
+    });
+
     test('upload: an upload that never finishes does not stay "Queued" in the library @412', async ({ page }) => {
       signedIn();
       await startUpload(page);
