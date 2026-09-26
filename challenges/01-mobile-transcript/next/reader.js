@@ -20,7 +20,7 @@
     if (!sheet) return;
     opener = from || document.activeElement;
     $('.scrim').hidden = false; sheet.hidden = false;
-    (focusables(sheet)[0] || sheet).focus();
+    if (from === null) { sheet.tabIndex = -1; sheet.focus(); } else (focusables(sheet)[0] || sheet).focus();
   };
   const closeSheet = () => {
     const open = $('.sheet:not([hidden])');

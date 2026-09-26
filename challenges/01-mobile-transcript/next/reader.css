@@ -4,7 +4,7 @@ body {
   margin: 0; background: var(--white); color: var(--ink);
   font: 400 var(--text)/1.6 var(--font);
 }
-button { font: inherit; color: inherit; }
+button, input { font: inherit; color: inherit; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 [hidden] { display: none !important; }
@@ -199,3 +199,4 @@ details summary { min-height: 52px; display: flex; align-items: center; cursor: 
 }
 a.icon-btn { color: var(--ink); }
 .steps li > span:first-child { width: 20px; flex: none; text-align: center; }
+.sheet:focus { outline: none; }
