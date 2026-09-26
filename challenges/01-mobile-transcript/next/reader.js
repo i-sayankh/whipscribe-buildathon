@@ -4,6 +4,8 @@
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const body = document.body;
+  // scroll this window only (scrollIntoView would also scroll a parent page such as compare.html)
+  const center = (el) => window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - window.innerHeight / 2 });
 
   const toast = (msg) => {
     let t = $('.toast');
@@ -87,7 +89,7 @@
   const go = (i) => {
     hits.forEach((h) => h.classList.remove('now'));
     cur = i;
-    if (i > -1) { hits[i].classList.add('now'); hits[i].scrollIntoView({ block: 'center' }); }
+    if (i > -1) { hits[i].classList.add('now'); center(hits[i]); }
     if (count) count.textContent = input.value.trim().length > 1 ? (hits.length ? `${cur + 1} of ${hits.length}` : 'No matches') : '';
   };
   const closeSearch = () => { if (!bar || bar.hidden) return; bar.hidden = true; input.value = ''; run(); body.classList.remove('kbd-open'); const b = $('[data-search]'); if (b) b.focus(); };
@@ -150,7 +152,7 @@
   // ---- preview: hide the dock's "Keep reading" once the inline end note is visible ----
   const end = $('.preview-end');
   if (end && 'IntersectionObserver' in window) new IntersectionObserver(([e]) => body.classList.toggle('at-end', e.isIntersecting)).observe(end);
-  if (body.dataset.scrollto) { const t = $(body.dataset.scrollto); if (t) t.scrollIntoView({ block: 'center' }); }
+  if (body.dataset.scrollto) { const t = $(body.dataset.scrollto); if (t) center(t); }
 
   // ---- URL switches for the compare page and screenshots: ?open=<sheet id>, ?kbd ----
   const q = new URLSearchParams(location.search);
