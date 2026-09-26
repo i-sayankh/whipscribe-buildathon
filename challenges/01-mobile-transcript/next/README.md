@@ -7,6 +7,14 @@ account (one 1 min 36 s recording, phone and laptop, emulated with
 Playwright plus my iPhone 16). The Track 1 issues I filed on the way
 (#155–#162) are linked where they come from the same screens.
 
+**Open it:** [`index.html`](index.html) lists every screen; [`compare.html`](compare.html)
+shows the current PNG next to the new screen, live, at the same width. It is
+plain HTML, CSS and a little JavaScript with no build step, so it opens from the file
+system or from any static server (`python -m http.server` in
+`challenges/01-mobile-transcript/`, then `/next/` on a phone on the same
+Wi-Fi). Screenshots of every screen at 320, 375 and 390 px (1280 for desktop)
+are in [`shots/`](shots/).
+
 ## What is wrong now
 
 Measured on the 320 × 568 screen in `01-reader-320.png` (CSS px):
@@ -36,7 +44,7 @@ Missing entirely:
 
 - **Three tabs (Transcript · Summary · AI Chat).** They are the three jobs people come for. (The live site now calls the second one "Overview"; I keep one name per job.)
 - **Timestamps in a gutter.** They are good for scanning and a tap target to play. Kept, one per paragraph instead of one per fragment.
-- **Search behaviour.** The count, ↑ ↓ and the pinned current match. Kept as is, only moved so the keyboard does not fight the bottom bars.
+- **Search behaviour.** The field under the tabs, the count, ↑ ↓ and close. Kept. One part is dropped: the pinned copy of the current match above the transcript. The line itself is now marked and scrolled to the middle, so the copy only repeated it and pushed the transcript down.
 - **The download sheet's content.** Formats, translated subtitles, Drive, summary. The contents are right; only the look and the missing Copy change.
 - **The header scrolls away while reading.** Kept.
 - **The inline "End of free preview — 48 % read" note.** It is the honest version of the upsell, so it stays and the repeating bar goes.
@@ -92,3 +100,60 @@ A bottom action bar replaces the dock while the selection lasts, with Copy with 
 
 **8. The desktop page is unchanged. Should it be?**
 Mostly yes. The desktop layout works, and a phone pass should not rewrite it. The shared fixes carry over: paragraphs by speaker, one Export surface (a popover on desktop), no "QUEUED" on finished files, and a label on the 🎓 button. See `screens/11-desktop-1280.html`.
+
+## What I changed and why
+
+| Screen | Change | Why | Removed / merged / added |
+|---|---|---|---|
+| Reader ([01](screens/01-reader.html)) | One header row; Export next to More | The meta line fits under the title; the tab row needs its width for three tabs and search at 320 | merged |
+| Reader | Paragraphs by speaker turn, one timestamp each, left-aligned | Fragments split sentences across timestamps; justified text left gaps in a narrow column | merged, removed |
+| Reader | One 64 px dock: play, time, speed, Keep reading | Two bars plus a dead player were about 170 px, a third of a small screen | merged |
+| Reader | No audio: one quiet line, no controls | A player that can't play shouldn't look like one | removed |
+| Processing ([02](screens/02-processing.html)) | New screen: steps, time left, what comes next, whether it's safe to close | There was none, and on the live site progress hides under the tabs (#159) | added |
+| Four speakers ([03](screens/03-four-speakers-320.html)) | Name chip + colour dot per turn, text full width; tap to rename everywhere | Every current screen is one speaker; a meeting needs "who said it" at a glance | added |
+| Search ([04](screens/04-search.html)) | Same control; pinned copy of the match dropped | The match is marked in place and centred | kept, removed |
+| One sheet pattern ([05](screens/05-panel.html)) | Copy or download, More, sign-up and rename share one sheet: handle, title, ✕, Esc, scrim, focus trap; a centred dialog on desktop | Four panel styles for one idea; the broken top-up dialog (#155) is what a separate style costs | merged |
+| Copy or download | Copy first, four formats shown, the rest under More formats | Copy was in a different menu from Download | merged |
+| More ([06](screens/06-more-menu.html)) | 9 items → 4, Delete after a gap; reading settings as a View row | Four items repeated something on screen | removed, merged |
+| Selection ([07](screens/07-selection.html)) | Bottom bar: Copy (with timestamp), Share quote, Play from here | The popover covered the next line and had no way to share the moment | changed |
+| Preview + keyboard ([08](screens/08-keep-reading-keyboard.html), `?kbd`) | Keep reading shown once (inline note hides the dock button); dock hides with the keyboard | The offer was made twice; the keyboard and two bars left three lines of text | removed |
+| Load failure ([09](screens/09-load-failure.html)) | Plain words, one action, no dead tabs | "HTTP 503" is the system's words | changed, removed |
+| Not on this account ([10](screens/10-not-on-this-account.html)) | Says who can open it and what to do; deleted-recording wording | Title stuck on "Loading…"; the live site says a missing file is "still ready" (#156) | changed, removed |
+| Desktop ([11](screens/11-desktop-1280.html)) | Layout kept; paragraphs, one Copy or download button, full title, labelled Study mode | A phone pass shouldn't rewrite the laptop page | kept |
+
+Count: 9 removals or merges, 4 additions.
+
+## What does not work yet
+
+- **No audio and no server.** "Play" moves a highlight and a clock; the time does not advance. Downloads, sign-in, rename and delete show a short message instead of doing the thing.
+- **Search is real but local**: it highlights matches in the text on the page, not across the library.
+- **The keyboard is a grey block.** Real iOS keyboards change the visual viewport; I have only checked the layout in emulation and on my phone, not with `visualViewport` handling.
+- **Speaker rename** changes the names on the page only; it is lost on reload.
+- **The Summary and AI Chat tabs** are placeholders: this pass is about the transcript.
+- **The four-speaker and processing screens** use sample text I wrote, not real diarisation output.
+- **The expanded player** (tap the dock to open the full controls) is described, not built.
+- **Dark mode** is not designed.
+- Checked in Playwright WebKit and Chromium at 320, 375, 390 and 1280 px, and on axe (0 violations on all 15 states). Not checked on Android hardware or with VoiceOver.
+
+## Tested on my phone
+
+I opened the prototype from my laptop over the local network and reviewed every screen. I didn't find anything I wanted changed, so there is no "changed after testing" commit. A proper pass on real devices (iPhone and Android, with VoiceOver) is still to do and is the first thing I would do next.
+
+## How I used AI
+
+I worked with Claude Code (Opus) for the whole of Track 1 and this pass. It drove Playwright for every observation, measured things I would have eyeballed, and wrote most of the code. I reviewed each screenshot and made the calls. Concrete examples of what I kept, changed or threw away:
+
+- **Kept:** the token values come from `getComputedStyle` on the live reader, not from guessing. The tool also computed contrast: the live muted grey `#737c73` is 4.32:1, so the prototype uses `#5f675f` (5.85:1).
+- **Rewrote:** the first build put search and Export in the tab row. In the 320 px screenshot the search icon sat on top of "AI Chat". I moved Export into the header next to More.
+- **Rewrote:** the critique said search "keeps the pinned current match", but the built screen didn't have it. Rather than add it back, I dropped it on purpose and said so, because the marked line already does the job.
+- **Caught:** search used `scrollIntoView`, which also scrolled the compare page around the frame. It was replaced with a scroll of the frame's own window.
+- **Threw away:** a "green scrollbar" on the live reader that looked like a bug turned out to be Playwright WebKit on Windows drawing scrollbars an iPhone doesn't. Not filed.
+- **Threw away:** a sentence in a Proposal claiming the top-up dialog "looks right on the marketing pages". Nobody had checked, so it came out.
+- **What the tool missed and I found:** the broken top-up dialog (#155). It only appears once your credits run out, and I hit it on my own iPhone. The tool then reproduced it and found the CSS cause.
+- The screens were written by a small throwaway script so the header, dock and sheets stay identical across pages. The script is not in the repo; what is committed is plain HTML.
+
+## What was new to me
+
+- **Mobile Chromium and WebKit handle a too-wide page differently.** Chromium widens the layout viewport, so the page quietly zooms out; WebKit keeps 320 px and lets the page slide sideways. The same `/docs` bug looks different in each.
+- **`display: flex` on a list item turns a bold phrase and the text after it into two columns.** That is the whole pricing bug (#160). I also learned that `getClientRects()` on the `<strong>` returns one box inside a flex item, while a Range over its text returns one box per line; my first test missed the bug because of it.
+- **Axe flags `<main role="tabpanel">`**, because the role replaces the landmark. The fix is a real `<main>` with the tab panel inside it.
