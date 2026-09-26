@@ -79,3 +79,5 @@ Labels were not applied (participants cannot set labels upstream); the `[mobile]
 | [#159](https://github.com/neugence/whipscribe-buildathon/issues/159) | F14 | On shorter phones, upload progress is hidden under the bottom tab bar |
 | [#160](https://github.com/neugence/whipscribe-buildathon/issues/160) | F6 | Pricing: Workspace perks split into two columns |
 | [#14 comment](https://github.com/neugence/whipscribe-buildathon/issues/14#issuecomment-5844694694) | F4 | Same progress-bar-after-error problem on the Paste link path |
+| [#161](https://github.com/neugence/whipscribe-buildathon/issues/161) | Proposal for #155 | Proposal: fix the top-up dialog's plan cards with one scoped CSS rule |
+| [#162](https://github.com/neugence/whipscribe-buildathon/issues/162) | Proposal for #158, #159 | Proposal: keep the phone upload visible, say when it stopped, and don't charge a free transcript for it |
