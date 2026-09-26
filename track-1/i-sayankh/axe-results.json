@@ -1,0 +1,408 @@
+{
+ "home-390": [
+  {
+   "id": "aria-required-children",
+   "impact": "critical",
+   "help": "Certain ARIA roles must contain particular children",
+   "n": 1,
+   "nodes": [
+    {
+     "t": "#pod-pills",
+     "s": "Fix any of the following: Element has children which are not allowed: button",
+     "h": "<div class=\"d-podshub-pills\" id=\"pod-pills\" role=\"tablist\" aria-label=\"Filter by niche\">"
+    }
+   ]
+  },
+  {
+   "id": "color-contrast",
+   "impact": "serious",
+   "help": "Elements must meet minimum color contrast ratio thresholds",
+   "n": 60,
+   "nodes": [
+    {
+     "t": "button[data-hero-tab=\"link\"]",
+     "s": "Fix any of the following: Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio",
+     "h": "<button type=\"button\" class=\"d-hero-tab t-link\" role=\"tab\" data-hero-tab=\"link\" aria-selected=\"false\" aria-controls=\"her"
+    },
+    {
+     "t": "button[data-hero-tab=\"record\"]",
+     "s": "Fix any of the following: Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio",
+     "h": "<button type=\"button\" class=\"d-hero-tab t-record\" role=\"tab\" data-hero-tab=\"record\" aria-selected=\"false\" aria-controls="
+    },
+    {
+     "t": ".d-hero-pane-dnd-formats",
+     "s": "Fix any of the following: Element has insufficient color contrast of 2.56 (foreground color: #94a3b8, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio ",
+     "h": "<div class=\"d-hero-pane-dnd-formats\">mp3 · mp4 · m4a · wav · mov · webm — up to 5 GB</div>"
+    },
+    {
+     "t": ".d-job[data-status=\"done\"]:nth-child(1) > .d-job-duration",
+     "s": "Fix any of the following: Element has insufficient color contrast of 1.63 (foreground color: #a3dc2d, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio o",
+     "h": "<div class=\"d-job-duration\">1h 04m</div>"
+    }
+   ]
+  },
+  {
+   "id": "label",
+   "impact": "critical",
+   "help": "Form elements must have labels",
+   "n": 1,
+   "nodes": [
+    {
+     "t": "#file-input",
+     "s": "Fix any of the following: Element does not have an implicit (wrapped) <label> Element does not have an explicit <label> aria-label attribute does not exist or is empty aria-labelledby attribute does n",
+     "h": "<input type=\"file\" id=\"file-input\" accept=\"audio/*,video/*,.mp3,.wav,.mp4,.m4a,.flac,.ogg,.webm,.mov\">"
+    }
+   ]
+  },
+  {
+   "id": "nested-interactive",
+   "impact": "serious",
+   "help": "Interactive controls must not be nested",
+   "n": 1,
+   "nodes": [
+    {
+     "t": ".d-hero-v2-upload",
+     "s": "Fix any of the following: Element has focusable descendants",
+     "h": "<label class=\"d-hero-v2-upload\" tabindex=\"-1\" role=\"button\" aria-label=\"Upload an audio or video file\" for=\"hero-file-in"
+    }
+   ]
+  }
+ ],
+ "pricing-390": [
+  {
+   "id": "color-contrast",
+   "impact": "serious",
+   "help": "Elements must meet minimum color contrast ratio thresholds",
+   "n": 15,
+   "nodes": [
+    {
+     "t": ".tier:nth-child(1) > .price-usd",
+     "s": "Fix any of the following: Element has insufficient color contrast of 2.94 (foreground color: #9990c4, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio ",
+     "h": "<div class=\"price-usd\">then $0.99 for the second</div>"
+    },
+    {
+     "t": "#tier-workspace > .tag",
+     "s": "Fix any of the following: Element has insufficient color contrast of 3.14 (foreground color: #6da00f, background color: #ffffff, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio ",
+     "h": "<div class=\"tag\">For your everyday work</div>"
+    },
+    {
+     "t": "#tier-workspace > .price-usd",
+     "s": "Fix any of the following: Element has insufficient color contrast of 2.94 (foreground color: #9990c4, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio ",
+     "h": "<div class=\"price-usd\"><strong class=\"rate-strong\">$19 / month</strong> · cancel anytime</div>"
+    },
+    {
+     "t": "#tier-workspace > .price-usd > .rate-strong",
+     "s": "Fix any of the following: Element has insufficient color contrast of 3.14 (foreground color: #6da00f, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio o",
+     "h": "<strong class=\"rate-strong\">$19 / month</strong>"
+    }
+   ]
+  },
+  {
+   "id": "label",
+   "impact": "critical",
+   "help": "Form elements must have labels",
+   "n": 1,
+   "nodes": [
+    {
+     "t": "#email",
+     "s": "Fix any of the following: Element does not have an implicit (wrapped) <label> Element does not have an explicit <label> aria-label attribute does not exist or is empty aria-labelledby attribute does n",
+     "h": "<input type=\"email\" id=\"email\" autocomplete=\"email\" style=\"position:absolute;width:1px;height:1px;opacity:0;pointer-even"
+    }
+   ]
+  }
+ ],
+ "reader-390": [
+  {
+   "id": "color-contrast",
+   "impact": "serious",
+   "help": "Elements must meet minimum color contrast ratio thresholds",
+   "n": 23,
+   "nodes": [
+    {
+     "t": ".ov-ai",
+     "s": "Fix any of the following: Element has insufficient color contrast of 4.25 (foreground color: #6b7280, background color: #eef2e6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio ",
+     "h": "<span class=\"ov-ai\">AI-generated brief · check the source for context</span>"
+    },
+    {
+     "t": "button[data-ov-copy=\"brief\"]",
+     "s": "Fix any of the following: Element has insufficient color contrast of 3.14 (foreground color: #6da00f, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio ",
+     "h": "<button type=\"button\" class=\"ov-copy\" data-ov-copy=\"brief\">Copy</button>"
+    },
+    {
+     "t": ".ins-ai-pill",
+     "s": "Fix any of the following: Element has insufficient color contrast of 3.14 (foreground color: #ffffff, background color: #6da00f, font size: 7.1pt (9.5px), font weight: bold). Expected contrast ratio o",
+     "h": "<span class=\"ins-ai-pill\">AI</span>"
+    },
+    {
+     "t": ".ov-play-inline[title=\"Play from 0:00\"][data-start=\"0\"]",
+     "s": "Fix any of the following: Element has insufficient color contrast of 3.03 (foreground color: #6da00f, background color: #f7fee7, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio ",
+     "h": "<button type=\"button\" class=\"ov-play ov-play-inline\" data-start=\"0\" title=\"Play from 0:00\">▶ 0:00</button>"
+    }
+   ]
+  }
+ ],
+ "library-390": [
+  {
+   "id": "aria-required-children",
+   "impact": "critical",
+   "help": "Certain ARIA roles must contain particular children",
+   "n": 1,
+   "nodes": [
+    {
+     "t": ".library-tabs",
+     "s": "Fix any of the following: Element has children which are not allowed: button",
+     "h": "<div class=\"library-tabs\" role=\"tablist\" aria-label=\"Library\">"
+    }
+   ]
+  },
+  {
+   "id": "color-contrast",
+   "impact": "serious",
+   "help": "Elements must meet minimum color contrast ratio thresholds",
+   "n": 17,
+   "nodes": [
+    {
+     "t": "#ws-signout-m",
+     "s": "Fix any of the following: Element has insufficient color contrast of 4.13 (foreground color: #738077, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio ",
+     "h": "<button type=\"button\" class=\"signout-chip\" id=\"ws-signout-m\" aria-label=\"Sign out\" title=\"Sign out\">Sign out</button>"
+    },
+    {
+     "t": ".head > div > p",
+     "s": "Fix any of the following: Element has insufficient color contrast of 4.13 (foreground color: #738077, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio ",
+     "h": "<p>1 folder · 1 filed recording</p>"
+    },
+    {
+     "t": "button[data-ingest=\"files\"] > span > small",
+     "s": "Fix any of the following: Element has insufficient color contrast of 3.88 (foreground color: #738077, background color: #f6f9f2, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio ",
+     "h": "<small>Audio or video · one or many</small>"
+    },
+    {
+     "t": "button[data-ingest=\"links\"] > span > small",
+     "s": "Fix any of the following: Element has insufficient color contrast of 3.88 (foreground color: #738077, background color: #f6f9f2, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio ",
+     "h": "<small>One link or a whole list</small>"
+    }
+   ]
+  }
+ ],
+ "home-1280": [
+  {
+   "id": "aria-required-children",
+   "impact": "critical",
+   "help": "Certain ARIA roles must contain particular children",
+   "n": 1,
+   "nodes": [
+    {
+     "t": "#pod-pills",
+     "s": "Fix any of the following: Element has children which are not allowed: button",
+     "h": "<div class=\"d-podshub-pills\" id=\"pod-pills\" role=\"tablist\" aria-label=\"Filter by niche\">"
+    }
+   ]
+  },
+  {
+   "id": "color-contrast",
+   "impact": "serious",
+   "help": "Elements must meet minimum color contrast ratio thresholds",
+   "n": 62,
+   "nodes": [
+    {
+     "t": "button[data-hero-tab=\"link\"]",
+     "s": "Fix any of the following: Element has insufficient color contrast of 4.4 (foreground color: #64748b, background color: #f4f6fb, font size: 10.1pt (13.5px), font weight: normal). Expected contrast rati",
+     "h": "<button type=\"button\" class=\"d-hero-tab t-link\" role=\"tab\" data-hero-tab=\"link\" aria-selected=\"false\" aria-controls=\"her"
+    },
+    {
+     "t": "button[data-hero-tab=\"link\"] > .tab-long",
+     "s": "Fix any of the following: Element has insufficient color contrast of 4.4 (foreground color: #64748b, background color: #f4f6fb, font size: 10.1pt (13.5px), font weight: normal). Expected contrast rati",
+     "h": "<span class=\"tab-long\"> link</span>"
+    },
+    {
+     "t": "button[data-hero-tab=\"record\"]",
+     "s": "Fix any of the following: Element has insufficient color contrast of 4.4 (foreground color: #64748b, background color: #f4f6fb, font size: 10.1pt (13.5px), font weight: normal). Expected contrast rati",
+     "h": "<button type=\"button\" class=\"d-hero-tab t-record\" role=\"tab\" data-hero-tab=\"record\" aria-selected=\"false\" aria-controls="
+    },
+    {
+     "t": "button[data-hero-tab=\"record\"] > .tab-long",
+     "s": "Fix any of the following: Element has insufficient color contrast of 4.4 (foreground color: #64748b, background color: #f4f6fb, font size: 10.1pt (13.5px), font weight: normal). Expected contrast rati",
+     "h": "<span class=\"tab-long\"> audio</span>"
+    }
+   ]
+  },
+  {
+   "id": "label",
+   "impact": "critical",
+   "help": "Form elements must have labels",
+   "n": 1,
+   "nodes": [
+    {
+     "t": "#file-input",
+     "s": "Fix any of the following: Element does not have an implicit (wrapped) <label> Element does not have an explicit <label> aria-label attribute does not exist or is empty aria-labelledby attribute does n",
+     "h": "<input type=\"file\" id=\"file-input\" accept=\"audio/*,video/*,.mp3,.wav,.mp4,.m4a,.flac,.ogg,.webm,.mov\">"
+    }
+   ]
+  },
+  {
+   "id": "link-in-text-block",
+   "impact": "serious",
+   "help": "Links must be distinguishable without relying on color",
+   "n": 3,
+   "nodes": [
+    {
+     "t": ".site-v3-privacy-foot > a[href$=\"security\"]",
+     "s": "Fix any of the following: The link has insufficient color contrast of 2.4:1 with the surrounding text. (Minimum contrast is 3:1, link text: #312e81, surrounding text: #64748b) The link has no styling ",
+     "h": "<a href=\"/security\">/security</a>"
+    },
+    {
+     "t": ".site-v3-privacy-foot > a[href$=\"privacy\"]",
+     "s": "Fix any of the following: The link has insufficient color contrast of 2.4:1 with the surrounding text. (Minimum contrast is 3:1, link text: #312e81, surrounding text: #64748b) The link has no styling ",
+     "h": "<a href=\"/privacy\">/privacy</a>"
+    },
+    {
+     "t": ".site-v3-privacy-foot > a[href=\"mailto:security@neugence.ai\"]",
+     "s": "Fix any of the following: The link has insufficient color contrast of 2.4:1 with the surrounding text. (Minimum contrast is 3:1, link text: #312e81, surrounding text: #64748b) The link has no styling ",
+     "h": "<a href=\"mailto:security@neugence.ai\">security@neugence.ai</a>"
+    }
+   ]
+  },
+  {
+   "id": "nested-interactive",
+   "impact": "serious",
+   "help": "Interactive controls must not be nested",
+   "n": 1,
+   "nodes": [
+    {
+     "t": ".d-hero-v2-upload",
+     "s": "Fix any of the following: Element has focusable descendants",
+     "h": "<label class=\"d-hero-v2-upload\" tabindex=\"-1\" role=\"button\" aria-label=\"Upload an audio or video file\" for=\"hero-file-in"
+    }
+   ]
+  }
+ ],
+ "pricing-1280": [
+  {
+   "id": "color-contrast",
+   "impact": "serious",
+   "help": "Elements must meet minimum color contrast ratio thresholds",
+   "n": 15,
+   "nodes": [
+    {
+     "t": ".tier:nth-child(1) > .price-usd",
+     "s": "Fix any of the following: Element has insufficient color contrast of 2.94 (foreground color: #9990c4, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio ",
+     "h": "<div class=\"price-usd\">then $0.99 for the second</div>"
+    },
+    {
+     "t": "#tier-workspace > .tag",
+     "s": "Fix any of the following: Element has insufficient color contrast of 3.14 (foreground color: #6da00f, background color: #ffffff, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio ",
+     "h": "<div class=\"tag\">For your everyday work</div>"
+    },
+    {
+     "t": "#tier-workspace > .price-usd",
+     "s": "Fix any of the following: Element has insufficient color contrast of 2.94 (foreground color: #9990c4, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio ",
+     "h": "<div class=\"price-usd\"><strong class=\"rate-strong\">$19 / month</strong> · cancel anytime</div>"
+    },
+    {
+     "t": "#tier-workspace > .price-usd > .rate-strong",
+     "s": "Fix any of the following: Element has insufficient color contrast of 3.14 (foreground color: #6da00f, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio o",
+     "h": "<strong class=\"rate-strong\">$19 / month</strong>"
+    }
+   ]
+  },
+  {
+   "id": "label",
+   "impact": "critical",
+   "help": "Form elements must have labels",
+   "n": 1,
+   "nodes": [
+    {
+     "t": "#email",
+     "s": "Fix any of the following: Element does not have an implicit (wrapped) <label> Element does not have an explicit <label> aria-label attribute does not exist or is empty aria-labelledby attribute does n",
+     "h": "<input type=\"email\" id=\"email\" autocomplete=\"email\" style=\"position:absolute;width:1px;height:1px;opacity:0;pointer-even"
+    }
+   ]
+  }
+ ],
+ "reader-1280": [
+  {
+   "id": "aria-required-children",
+   "impact": "critical",
+   "help": "Certain ARIA roles must contain particular children",
+   "n": 1,
+   "nodes": [
+    {
+     "t": "#view-tabs",
+     "s": "Fix any of the following: Element has children which are not allowed: button, button[aria-haspopup]",
+     "h": "<div class=\"view-tabs\" role=\"tablist\" id=\"view-tabs\">"
+    }
+   ]
+  },
+  {
+   "id": "color-contrast",
+   "impact": "serious",
+   "help": "Elements must meet minimum color contrast ratio thresholds",
+   "n": 15,
+   "nodes": [
+    {
+     "t": ".wt-tb-back",
+     "s": "Fix any of the following: Element has insufficient color contrast of 4.32 (foreground color: #737c73, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio ",
+     "h": "<a class=\"wt-tb-back\" href=\"/home\">← Library</a>"
+    },
+    {
+     "t": "#wt-switch-meta",
+     "s": "Fix any of the following: Element has insufficient color contrast of 4.32 (foreground color: #737c73, background color: #ffffff, font size: 7.9pt (10.5px), font weight: normal). Expected contrast rati",
+     "h": "<small id=\"wt-switch-meta\">1m 36s · EN · 26 Sept 2026, 13:06</small>"
+    },
+    {
+     "t": "#wt-tb-saved",
+     "s": "Fix any of the following: Element has insufficient color contrast of 4.32 (foreground color: #737c73, background color: #ffffff, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio ",
+     "h": "<span class=\"wt-tb-saved\" id=\"wt-tb-saved\"><svg viewBox=\"0 0 24 24\" width=\"11\" height=\"11\" fill=\"none\" stroke=\"currentCo"
+    },
+    {
+     "t": ".wt-tb-credits-cta",
+     "s": "Fix any of the following: Element has insufficient color contrast of 4.42 (foreground color: #54801e, background color: #fff8e6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio ",
+     "h": "<span class=\"wt-tb-credits-cta\">Add credits ↗</span>"
+    }
+   ]
+  }
+ ],
+ "library-1280": [
+  {
+   "id": "aria-required-children",
+   "impact": "critical",
+   "help": "Certain ARIA roles must contain particular children",
+   "n": 1,
+   "nodes": [
+    {
+     "t": ".library-tabs",
+     "s": "Fix any of the following: Element has children which are not allowed: button",
+     "h": "<div class=\"library-tabs\" role=\"tablist\" aria-label=\"Library\">"
+    }
+   ]
+  },
+  {
+   "id": "color-contrast",
+   "impact": "serious",
+   "help": "Elements must meet minimum color contrast ratio thresholds",
+   "n": 15,
+   "nodes": [
+    {
+     "t": ".section-label",
+     "s": "Fix any of the following: Element has insufficient color contrast of 3.88 (foreground color: #738077, background color: #f7f8f7, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio ",
+     "h": "<div class=\"section-label\">Pinned folders</div>"
+    },
+    {
+     "t": "#ws-who",
+     "s": "Fix any of the following: Element has insufficient color contrast of 3.88 (foreground color: #738077, background color: #f7f8f7, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio ",
+     "h": "<span class=\"email\" id=\"ws-who\">sayank.khutia123@gmail.com</span>"
+    },
+    {
+     "t": ".head > div > p",
+     "s": "Fix any of the following: Element has insufficient color contrast of 4.13 (foreground color: #738077, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio ",
+     "h": "<p>1 folder · 1 filed recording</p>"
+    },
+    {
+     "t": "button[data-ingest=\"files\"] > span > small",
+     "s": "Fix any of the following: Element has insufficient color contrast of 3.88 (foreground color: #738077, background color: #f6f9f2, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio ",
+     "h": "<small>Audio or video · one or many</small>"
+    }
+   ]
+  }
+ ]
+}

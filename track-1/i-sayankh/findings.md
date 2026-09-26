@@ -47,3 +47,16 @@ Severity: small annoyance / stops me finishing / blocks the whole flow.
 | F33 | Reader, offline | 412 | Offline, AI Chat answers with a red bubble "Network error: Failed to fetch" (browser wording) | "You're offline — your question will send when you're back" or similar, in the user's words | small annoyance | y | no |
 | F34 | Reader, offline | 412 | Offline, tapping `.docx` in the Download sheet gave no visible feedback within 3 s. Not sure the tap registered, so not filing | — | unsure | n | — |
 | F35 | Account | — | Did not sign out (it would end the saved test session; sign-out is already #35) and did not open the API key page, to keep keys out of screenshots | — | skipped on purpose | — | — |
+
+## Accessibility (axe-core 4.x, WCAG 2.1 A/AA, Chromium, 390 and 1280)
+
+Raw output: `axe-results.json`. I kept only findings I can explain and checked by eye.
+
+| # | Page | What axe found, in plain words | Duplicate of |
+|---|---|---|---|
+| A1 | Reader (390, 1280) | The reader's accent green `#6da00f` is used for small text on white or near-white: the "Copy" links, the ▶ 0:00 seek chips in the Executive Summary, the "AI" pill (white on green). Contrast 3.0–3.1:1, below 4.5:1 for text this size | no (#18 is about the home page) |
+| A2 | Reader (1280), Library (390, 1280) | The Overview / Transcript / AI Chat bar and the All files / Folders bar are marked `role="tablist"`, but the buttons inside have no `role="tab"` or `aria-selected`. A screen reader announces a tab list with no tabs and cannot say which one is open | no |
+| A3 | Home (390, 1280) | Low-contrast grey `#94a3b8` on white (2.56:1) on the "Paste" and "Record" tab labels and the format line; the lime duration `#a3dc2d` on white is 1.63:1 | #18 |
+| A4 | Home (390, 1280) | The upload `<label role="button">` contains another focusable control (nested interactive), and `#file-input` has no label | #18 (partly) |
+| A5 | Library (390) | Secondary grey `#738077` on the pale green cards is 3.88:1 at 11 px ("Audio or video · one or many") | no |
+| A6 | Pricing (390, 1280) | The "≈ ₹1,820.58 (charged in USD)" line is `#9990c4` on white, 2.94:1 | no |
