@@ -137,7 +137,7 @@ Count: 9 removals or merges, 4 additions.
 
 ## Tested on my phone
 
-I opened the prototype from my laptop over the local network and reviewed every screen. I didn't find anything I wanted changed, so there is no "changed after testing" commit. A proper pass on real devices (iPhone and Android, with VoiceOver) is still to do and is the first thing I would do next.
+I reviewed the screens and didn't ask for a change, so there is no "changed after testing" commit. A proper pass on real devices (iPhone and Android, with VoiceOver) is still to do and is the first thing I would do next.
 
 ## How I used AI
 
