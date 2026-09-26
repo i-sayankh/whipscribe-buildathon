@@ -200,3 +200,4 @@ details summary { min-height: 52px; display: flex; align-items: center; cursor: 
 a.icon-btn { color: var(--ink); }
 .steps li > span:first-child { width: 20px; flex: none; text-align: center; }
 .sheet:focus { outline: none; }
+.btn svg { width: 18px; height: 18px; flex: none; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
