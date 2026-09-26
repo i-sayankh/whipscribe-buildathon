@@ -137,7 +137,7 @@
   $$('.selbar [data-act]').forEach((b) => b.addEventListener('click', async () => {
     const info = selInfo() || body._pre; if (!info) return;
     const link = `${location.href.split('#')[0]}#t=${info.t}`;
-    const quote = `"${info.text}" — ${info.who ? info.who + ', ' : ''}${info.t}`;
+    const quote = `“${info.text}” — ${info.who ? info.who + ', ' : ''}${info.t}`;
     try {
       if (b.dataset.act === 'copy') { await navigator.clipboard.writeText(quote); toast('Copied with the timestamp'); }
       if (b.dataset.act === 'share') { if (navigator.share) await navigator.share({ text: quote, url: link }); else { await navigator.clipboard.writeText(`${quote}\n${link}`); toast('Link to this moment copied'); } }
