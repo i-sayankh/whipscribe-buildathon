@@ -65,3 +65,17 @@ Raw output: `axe-results.json`. I kept only findings I can explain and checked b
 | A4 | Home (390, 1280) | The upload `<label role="button">` contains another focusable control (nested interactive), and `#file-input` has no label | #18 (partly) |
 | A5 | Library (390) | Secondary grey `#738077` on the pale green cards is 3.88:1 at 11 px ("Audio or video · one or many") | no |
 | A6 | Pricing (390, 1280) | The "≈ ₹1,820.58 (charged in USD)" line is `#9990c4` on white, 2.94:1 | no |
+
+## Filed
+
+Labels were not applied (participants cannot set labels upstream); the `[mobile]` title prefix carries it.
+
+| Issue | Finding | Title |
+|---|---|---|
+| [#155](https://github.com/neugence/whipscribe-buildathon/issues/155) | F36 | "Top up or recover credits" plan cards overlap and spill out of the dialog |
+| [#156](https://github.com/neugence/whipscribe-buildathon/issues/156) | F32 | Opening a recording that doesn't exist says "transcript still ready" and stays on "Loading…" |
+| [#157](https://github.com/neugence/whipscribe-buildathon/issues/157) | F17 | "In one minute" summary is cut off mid-word at 240 characters |
+| [#158](https://github.com/neugence/whipscribe-buildathon/issues/158) | F15, F38 | An upload that never finishes shows "Queued" for 24 minutes, then "Failed", and uses up a free transcript |
+| [#159](https://github.com/neugence/whipscribe-buildathon/issues/159) | F14 | On shorter phones, upload progress is hidden under the bottom tab bar |
+| [#160](https://github.com/neugence/whipscribe-buildathon/issues/160) | F6 | Pricing: Workspace perks split into two columns |
+| [#14 comment](https://github.com/neugence/whipscribe-buildathon/issues/14#issuecomment-5844694694) | F4 | Same progress-bar-after-error problem on the Paste link path |
