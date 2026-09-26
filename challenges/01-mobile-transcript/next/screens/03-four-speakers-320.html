@@ -47,7 +47,8 @@
   <button class="icon-btn" type="button" aria-label="Next match" data-next><svg aria-hidden="true"><use href="#i-down"/></svg></button>
   <button class="icon-btn" type="button" aria-label="Close search" data-close-search><svg aria-hidden="true"><use href="#i-close"/></svg></button>
 </div>
-<main class="transcript" id="transcript" role="tabpanel" aria-labelledby="tab-t" tabindex="-1">
+<main id="main">
+<div class="transcript" id="transcript" role="tabpanel" aria-labelledby="tab-t" tabindex="-1">
 <div class="turn" data-t="0:00">
   <div class="turn-head"><button class="who" type="button" data-sp="a" data-open="rename" aria-label="Priya, rename speaker"><span class="dot" style="background:var(--sp1)"></span><span class="name">Priya</span></button><button class="ts" type="button" aria-label="Play from 0:00">0:00</button></div>
   <p><span class="s" id="m0-0" data-t="0:00">Okay, let&#x27;s start. Checkout redesign, week three.</span> <span class="s" id="m0-1" data-t="0:00">Marcus, can you show where the new address step landed?</span></p>
@@ -88,11 +89,12 @@
   <div class="turn-head"><button class="who" type="button" data-sp="b" data-open="rename" aria-label="Marcus, rename speaker"><span class="dot" style="background:var(--sp2)"></span><span class="name">Marcus</span></button><button class="ts" type="button" aria-label="Play from 1:14">1:14</button></div>
   <p><span class="s" id="m9-0" data-t="1:14">I&#x27;ll post the prototype link in the channel today.</span></p>
 </div>
-</main>
+</div>
 <section id="p-summary" role="tabpanel" aria-labelledby="tab-s" hidden class="state"><h2>Summary</h2><p>(Not part of this pass: the Summary tab is unchanged.)</p></section>
 <section id="p-chat" role="tabpanel" aria-labelledby="tab-c" hidden class="state"><h2>AI Chat</h2><p>(Not part of this pass: AI Chat is unchanged.)</p></section>
+</main>
 <div class="dock" role="region" aria-label="Player"><button class="icon-btn play" type="button" aria-label="Play" aria-pressed="false"><svg aria-hidden="true"><use href="#i-play"/></svg></button><span class="time">0:37<span class="sr-only"> of </span> / 1:20</span><button class="icon-btn speed" type="button" aria-label="Playback speed, 1 times">1×</button></div>
-<div class="selbar" role="toolbar" aria-label="Selected text">
+<div class="selbar" role="region" aria-label="Actions for the selected text">
   <button type="button" data-act="copy"><svg aria-hidden="true"><use href="#i-copy"/></svg>Copy</button>
   <button type="button" data-act="share"><svg aria-hidden="true"><use href="#i-share"/></svg>Share quote</button>
   <button type="button" data-act="play"><svg aria-hidden="true"><use href="#i-play"/></svg>Play from here</button>
