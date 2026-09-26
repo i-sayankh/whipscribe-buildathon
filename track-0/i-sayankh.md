@@ -21,4 +21,4 @@ Backend-focused software engineer: Python, FastAPI, Next.js, TypeScript.
 | moizycodes/moizy-open-source-issues | [#121](https://github.com/moizycodes/moizy-open-source-issues/pull/121) | Fix for issue #120 |
 | lingdojo/kana-dojo | [#19954](https://github.com/lingdojo/kana-dojo/pull/19954) | Content: added an anime quote |
 
-Planned tracks: 0, 1, <2/3/4>
+Planned tracks: 0, 1, 4
