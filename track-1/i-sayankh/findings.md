@@ -81,3 +81,5 @@ Labels were not applied (participants cannot set labels upstream); the `[mobile]
 | [#14 comment](https://github.com/neugence/whipscribe-buildathon/issues/14#issuecomment-5844694694) | F4 | Same progress-bar-after-error problem on the Paste link path |
 | [#161](https://github.com/neugence/whipscribe-buildathon/issues/161) | Proposal for #155 | Proposal: fix the top-up dialog's plan cards with one scoped CSS rule |
 | [#162](https://github.com/neugence/whipscribe-buildathon/issues/162) | Proposal for #158, #159 | Proposal: keep the phone upload visible, say when it stopped, and don't charge a free transcript for it |
+| [#163](https://github.com/neugence/whipscribe-buildathon/pull/163) | Challenge 01 | Track 1: Challenge 01 — next pass on the phone transcript reader (pull request) |
+| [#152 comment](https://github.com/neugence/whipscribe-buildathon/pull/152#issuecomment-5845208952) | Track 0 | Links to everything above |
